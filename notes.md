@@ -25,9 +25,11 @@
     console.log(t1,t2,t3);
 
 ## Object Destruteing
-- `const nums=[100,50,20,30];`
-- `const [t1,t2]=nums;`
-- `console.log(t1,t2);//100,50`
+```js
+const nums=[100,50,20,30];
+const [t1,t2]=nums;
+console.log(t1,t2);//100,50
+```
 ### Rest operator
 ```js
 const[z1,...z2]=nums;
@@ -43,4 +45,33 @@ const { man, power, skill } = {
 
 console.log(skill);
 ```
-
+# Task:
+## parameters :
+ - Function parameters are the names listed in the function's definition
+## Arguments :
+- Function arguments are the real values passed to the function.
+- Parameters are initialized to the values of the arguments supplied.
+## Currying:
+- It is a technique in functional programming, that transforms the function of multiple arguments into several functions of a single argument in sequence. 
+    - Higher order function:a function that takes one or more functions as arguments, or returns a function as its result
+### What is advantage:
+    - It helps us to create a higher-order function
+    - It is very useful in building modular and reusable code
+    - It makes the code more readable.
+## Example:
+```js
+function calculateVolume(length, breadth, height) {
+    return length * breadth * height;
+}
+console.log(calculateVolume(4, 5, 6));
+```
+## After Currying
+```js
+function calculateVolume(length) {
+	return function (breadth) {
+		return function (height) {
+			return length * breadth * height;
+		}
+	}
+}
+console.log(calculateVolume(4)(5)(6));
