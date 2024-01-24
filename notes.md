@@ -220,10 +220,88 @@ console.log(ans);
 const getlongername=name1=>name1.length>=10;
 console.log(avengers.filter(getlongername));
 ```
-
+## REDUCE:
+- it is also called as fold
 ## Boxing:
     - here were string is converted into string object
 
 ## Imperative vs Declarative:
 - Imperative:How to do? there are lot of unneccasry codes
 - Declarative:What to do? reduceing the number of code in the head.
+## JSON
+    - it is string
+    - it does not have all features of object.
+    - It is an universal language(Universal glue)
+    - it is in the string so every language has String so it is used as universal language.
+    - It has loose coupling extepand into different form
+    - php gives in the html form
+    - SPA single page application
+    - search engine optimization
+    - if you want fast then you dont want SEO
+    - if want user friendly thn use SEO
+- JSON.parse(data) is used to convert string into object.
+- /t is used for pretty printing
+- shaalow- take only out object value nested will not be taken.
+- deep copy-takes all the object includes nested objects also.
+
+# SDLC
+- Planning
+- Analysis
+- Design
+- Implementation
+- Testing 
+- Maintainance
+## SDLC WORKS
+- client to project Manager
+- project manager to system architect
+- then to designer
+- then to head of ebgineering
+- then to developer
+- to testing team
+- devops
+- client to support-(l1,l2(error))
+- then to development team
+- then testing team
+- then to devops team.
+
+# AGILE:
+- implementation of agile is scrum
+- agile is in between testing
+    - SPRINT-1(2-4weeks),plan,design,develop,test,deploy.
+    - sprint -2 (after two sprints customer will see the update)
+## Scrum:
+- assiging work to everyone sprint planning(1 hour)
+- story points may be day
+- every day meeting standup meeting
+- blocker-due to some reason cannot do task
+- backlog-if work is not comoketed/yet to start
+- retro spective last 14th day
+- spill over extra than planned time.
+- ADOC request urgent work from client.
+- Uncompleted work is backlog
+### KANBAN BOARD:
+- backolg
+- In progress( name, photo)
+- peer review(TL)
+- Done
+## INSIDER:
+- ring realease
+- 1C will be in master branch
+- 10k will be in Dev branch it is always advanced
+- feature will developer will work on this feature
+
+## git:
+```
+- git fetch --a
+- git branch -D branch_name
+- git merge branch_name
+- git --graph
+```
+- what git rebase 
+- git rebase-i(interactive)
+- how to delete the commit?
+- fork(uses)?
+
+
+
+
