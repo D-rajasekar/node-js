@@ -14,7 +14,6 @@ const person = {
   
   console.log(getPersonInfo(person));
 
-//arr
 
 
 
