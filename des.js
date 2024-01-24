@@ -14,8 +14,7 @@ const person = {
   
   console.log(getPersonInfo(person));
 
-  // changes made
-
+//arr
 
 
 
