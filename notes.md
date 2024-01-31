@@ -294,14 +294,61 @@ console.log(avengers.filter(getlongername));
 ```
 - git fetch --a
 - git branch -D branch_name
-- git merge branch_name
+- git merge branch_name// create branch
 - git --graph
+- git add .
+- git commit -m""
+- git checkout file name
+- git checkout -    // backbutton
+- rebase// git rebase filename
+- git reset--soft HEAD~1//delete commit it will be in the staged
+- git reset --hard HEAD~1//it will delete it not in the staged also
+- git rebase -i HEAD~3//delete total history and delete it in online 
+- p->pick,r->rework,e->edit,d->drop
 ```
-- what git rebase 
+# VIM:
+- :wq in VIM 
+- if you want to insert something press i
+- 3 MODES-normal mode -press esc
+         - command mode -:
+         - insert mode - :wq
+         navigation is JKL key
+- undo-u
+- back-b
+- write -w
+- quit-:wq
+- 
+
+
+
+
+
+## rebase
+- git rebase -i ~1//dlegte coomand with rebase
+- dont rebase on master 
+- first pull from master and checkout in the feature and reabse it in the feature.
+- what git rebase - it will change history use it in the feature not in the master branch.
 - git rebase-i(interactive)
 - how to delete the commit?
 - fork(uses)?
+## loops:
+- n- no of iteration(n is number of element in an array)
+- 2n -if n=1000 thn it will be 2*100=200
+- n^2- it will be 10lakh 
 
+# SetTimeout
+    - function and time 
+    - it is a high order function
+    - call back is happen when event complete and actiomn will be taken
+     - how do we stop setInterval
+```js
+setTimeout(function(){
+    console.log("hi");
+},2000)
 
+setInterval which is used recall function
+```
 
-
+## JS
+- It is single thtread and asynchronus
+-  
