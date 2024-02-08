@@ -1,0 +1,6 @@
+# CACHE:
+- Caching is a technique used to improve the performance of web applications. In simple terms, caching involves storing frequently accessed data or content in a temporary storage location called a cache.
+    - CACHE-ASIDE:In this strategy, the application is responsible for managing the cache. When data is requested, the application checks the cache first. If the data is not in the cache, it is retrieved from the database and stored in the cache for future use
+    - WRITE-THROUGH:In this strategy, data is written to both the cache and the database at the same time. When data is updated, it is written to the cache and the database simultaneously.
+    - Write-Behind -In this strategy, data is written to the cache first and then to the database at a later time. This allows write operations to be faster, but it can lead to data inconsistencies
+    - Read-Through-In this strategy, the cache is used as the primary data source. When data is requested, the cache is checked first. If the data is not in the cache, it is retrieved from the database and stored in the cache for future use.

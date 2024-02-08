@@ -1,4 +1,4 @@
-# Basics of javascript
+ # Basics of javascript
 ## Five pillars:
     - 1.Readability
     - 2.Maintainable
@@ -235,6 +235,7 @@ console.log(avengers.filter(getlongername));
     - it is in the string so every language has String so it is used as universal language.
     - It has loose coupling extepand into different form
     - php gives in the html form
+    - serialisation means converting object to string means.
     - SPA single page application
     - search engine optimization
     - if you want fast then you dont want SEO
@@ -305,6 +306,7 @@ console.log(avengers.filter(getlongername));
 - git reset --hard HEAD~1//it will delete it not in the staged also
 - git rebase -i HEAD~3//delete total history and delete it in online 
 - p->pick,r->rework,e->edit,d->drop
+- Git stash-temporary storage
 ```
 # VIM:
 - :wq in VIM 
@@ -339,7 +341,7 @@ console.log(avengers.filter(getlongername));
 # SetTimeout
     - function and time 
     - it is a high order function
-    - call back is happen when event complete and actiomn will be taken
+    - call back is happen when event complete and actiom will be taken
      - how do we stop setInterval
 ```js
 setTimeout(function(){
@@ -349,6 +351,201 @@ setTimeout(function(){
 setInterval which is used recall function
 ```
 
-## JS
+## Event loop
 - It is single thtread and asynchronus
--  
+-  async - it runs simultaneously 
+- call stack -runs js
+- web api-only waits
+- event loop-push to stack 
+- olny whern call stack is emty the then it will push it to call stack
+- setTimeout,setInterval,onClick are all part of WEB API.are event listeners
+- when api is in waiting stage the call stack is working on the below codes.
+- keep your call stack empty or main thread empty
+# Call back hell
+- Nesting of callback is callback hell
+```js
+setTimeout(()=>{
+    console.log("hi");
+    setTimeout(()=>{
+        console.log("hi");
+        setTimeout(()=>{
+            console.log("hi");
+        },2000);
+    },2000);
+},2000);
+```
+- it acts like a set 
+## Promise:
+- It has twpo state - pending
+                    - fulfilled
+                    - rejected
+- promise take two things
+- then catch finally 
+- .then always return promise object
+- if any of the elements rejected then whole will be rejected
+```js
+var DrivingTest= new Promise((resolve,reject)=>{
+    let age=20;
+    if(age>=18){
+
+        setTimeout(()=>{
+            resolve("you are eligible");//fullfilled case 3
+        },5000)
+        //resolve("you are eligible");//fullfilled case 1
+    }
+    else{
+        reject(" try after some years");//rejected case 2
+    }
+});
+ console.log(DrivingTest);
+
+
+```
+
+## Promiseall&race:
+- it access the 1st one which is very fast
+- CDN
+- user has very good exeperience
+```js
+var f1=Promise.resolve("bhavani");
+var f2=Promise.resolve("neha")
+var f3=Promise.resolve("mano")
+
+Promise.all([f1,f2,f3]).then((data)=>console.log(data));
+// if two fails 1st rejected will be printed
+
+Promise.race([f1,f2,f3]).then((data)=>console.log(data));//promise.race prints the 1st executed CDN
+```
+- swagger is to document the API
+ 
+
+ ## TASK
+ post-adding 3 users data with fetch content type also should be given
+ put- upadte indepemdence flag
+ bind call apply and this
+
+### CALL:
+- The call method binds the this value to the function and executes the function. It takes the this value and a list of arguments as parameters. Then, it returns the value returned by the function, which is called using the call method.
+```js
+function test(arg1, arg2){
+  console.log(this.num, arg1, arg2); // 100, 10, 20
+}
+test.call({num: 100}, 10, 20);
+```
+### APPLY:
+- The apply method binds the this value to the function and executes the function. It takes the this value and a single array object as parameters, and it returns the value returned by the function, which is called using the apply method.
+```js
+function test(...arguments){
+  console.log(this.num, arguments);//100, [1,2,3]
+}
+test.apply({num: 100}, [1,2,3]); 
+```
+### BIND:
+- The bind method binds the this value to the function and returns a new function. However, we still need to separately invoke the returned function.
+```js
+function test(arg){
+ console.log(this.number, arg);
+}
+
+let bindedFn = test.bind({number: 99}, "argument");
+
+bindedFn(); // 99, "argument"
+```
+## This:
+- it needs a context
+- dont see where it is called see where it is called
+- Window object constains all global methods
+- Class are mimic the real worls entity
+# database:
+- it is a special software
+- cloud the database will be stored
+- cloud are renting pc
+- open source is good beacuse it is ready fix the bug
+## LINUX
+    - free,oprn-source,secure,small footprint,automation
+### Scaling:
+    - it is vertical and horizontal 
+    - auto scaling means renting PC according to use
+    - DDOS- deniel of servicw-server over flow
+## DATABASE:
+    - it will catch the answer of the query and provide a cache to the RAM it take the original data from the hard disk .
+    - CACHE what are the different statergy,removed.
+    - CRUD- easy
+    - Querying becomes easier
+    - Backups are inbuilt
+    - UNdo-easily(no time limit)
+    - performance
+    - redis
+    - PL/SQL is very high
+# CACHE:
+- Caching is a technique used to improve the performance of web applications. In simple terms, caching involves storing frequently accessed data or content in a temporary storage location called a cache.
+    - CACHE-ASIDE:In this strategy, the application is responsible for managing the cache. When data is requested, the application checks the cache first. If the data is not in the cache, it is retrieved from the database and stored in the cache for future use
+    - WRITE-THROUGH:In this strategy, data is written to both the cache and the database at the same time. When data is updated, it is written to the cache and the database simultaneously.
+    - Write-Behind -In this strategy, data is written to the cache first and then to the database at a later time. This allows write operations to be faster, but it can lead to data inconsistencies
+    - Read-Through-In this strategy, the cache is used as the primary data source. When data is requested, the cache is checked first. If the data is not in the cache, it is retrieved from the database and stored in the cache for future use.
+## TASK:
+- how to remove cache 
+- how long data will be present in the cache
+
+## NORMALIZATION:
+- more normalize it will be more safer
+### 1st 
+    - row order,mixing data types,without primary key not 
+    - 1 coloumn should not have two hidden data eg:person standing with hieght order here person data name is noted also noted.
+    - No mixing data types
+    - At should depend 1 unique value
+### 2nd:
+    - update  anounoumly-power failure one data may be upadted & another will not upadted.
+    - delete anoumly-It is also same as update when we try to delete may be the data may be deleted or may not be deleted there may be a data inconsistency.
+    - Insertion anoumoly
+    - Each non-key attribute should only depend upon primary key.
+    - when player rating is only depend upon player ID it shouls be seprated.
+    - Only depend upon player ID and not depend upon other.
+### 3rd:
+    - Skill depend on skill rating
+    ->Every non-key attribute in a table should depend on the key, the whole key & nothing but the key.
+
+### 4th:
+    - multivalue dependencies in a table must be multivalued dependicies on the key.
+    - make it more safer
+    - commit act as a save.
+
+### 5th:
+    - It should always be in a 4th normal form the table cannot be descriable as the logical results of joining some other table together.
+
+#### SQL- 
+- Float-3
+- double-6
+- real -12
+- char-specify the size
+- varchar-few lines
+- TEXT-more than the lines
+- blob-store the binary data
+- database constraints are used to avoid the data mess up by us.
+
+# NODE JS:
+- It is  environment to run JS
+- why-browsers-cannot delete,create,update,read. 
+- So browsers are restricted and browers cannot acceccs the file system cannot acceces hardware details.
+- cannot copy files.
+- LOVE virus - it is passed to the wifi of your network it has connected.
+- worm virus- they keep on duplicating files.
+    - ## USES:
+    - Data streamining
+    - server-side proxy
+    - chat bot
+    - Big data analytics
+    - wireless connectivity
+    - system monitering dashboard
+    - Web scrapping
+    - Real time data
+    ## Arcitechture:
+    - node js bindings used to acces the file systems.
+    - it is single thread asynchronous
+    - we are taking the request and processing it and data will be sent to call stack then it will be sent to frontend.
+    ## Change sin nodejs Environment:
+    - No DOM
+    - No Document methods
+    - No Window
+    - Global. SetTimeout is there instead os Set Timout
+    - 
